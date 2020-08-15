@@ -1,7 +1,7 @@
-## What is Automatic Text Summarization
+## Automatic Text Summarization
 Process of shortening a text document using software automation to create a summary of the major points of the original document. The goal of this summarizer is to optimize topic coverage from the original document while keeping it readable. 
 
-**What is relevant to KP Document Catalog**
+**Why is it relevant to KP Document Catalog**
 There is an abundance of data in any organization and we want to get to the relevant document that meets our needs by reading through the summary to decide which search results meets our need. This saves time in information retrieval. 
 
 **Approaches to text summarization**
@@ -37,7 +37,7 @@ LexRank
 TextRank among others.  
 2)	Genism library that is used for topic modeling can also be used for summarization based on ranks of text sentences using a variation of the TextRank algorithm
 
-**References: **
+**References:**
 
 Nekic, Masa (2019). Automatic text summarization. Presented in Oslo Conference. Retrieved from https://www.youtube.com/watch?v=_d0OXm0dRZ4
 
