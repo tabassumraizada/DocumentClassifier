@@ -1,7 +1,7 @@
 ## What is Automatic Text Summarization
 Process of shortening a text document using software automation to create a summary of the major points of the original document. The goal of this summarizer is to optimize topic coverage from the original document while keeping it readable. 
 
-**What is relevant to the Document Catalog **
+**What is relevant to KP Document Catalog**
 There is an abundance of data in any organization and we want to get to the relevant document that meets our needs by reading through the summary to decide which search results meets our need. This saves time in information retrieval. 
 
 **Approaches to text summarization**
@@ -12,7 +12,7 @@ This technique involves paraphrasing and shortening parts of the source document
 
 **Summary of Text Summarization Techniques:**
 
-|Period|	 Method	|Methd	|Description|
+|Period|	 Type	|Method	|Description|
 | :------------ | ------:| -----:|-----:|
 |Pre-2000|	Extractive Method	|Positional Methods: Introduced by P.Baxendale in 1958	|In technical literature topic sentence was found to be mostly the first and last sentence of the paragraphs. It used Naïve approach but was simple and worked most of the time|
 |Pre-2000	|Extractive Method	|Luhn’s Method (1958)|Used the frequency of content terms for creation of literature abstracts. Significant words are in the middle range of frequency|
@@ -30,7 +30,7 @@ ROUGE stands for Recall-Oriented Understudy for Gisting Evaluation. It includes 
 
 **Python Libraries used in text summarization:**
 
-1)	[Sumy](https://pypi.org/project/sumy/)comes with a automatics text summarizer for HTML pages and plain text documents. Several summarization methods can be implemented for e.g:
+1)	[Sumy ](https://pypi.org/project/sumy/)comes with a automatics text summarizer for HTML pages and plain text documents. Several summarization methods can be implemented for e.g:
 Luhn’s
 Edmundson
 LexRank
