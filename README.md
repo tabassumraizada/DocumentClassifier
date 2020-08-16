@@ -13,6 +13,10 @@ The goal of this project is to pick the best classification algorithms that give
 
 1. The second dataset was build using internal company documents which were classified into six categories - Membership, Claims, Product and Benefits, Pharmacy, Healthcare utilization and Provider and Network. This corpus used word, powerpoint, excel and pdf documents. Refer to [file ](/Analysis/KPDocumentCorpus_Creation and Pre-Processing.ipynb) for the Pre-processing steps involved in building this dataset. No content has been retained for confidentiality reasons. These documents are domain specific and do involve some overlap between the few categories like Provider and Network with Product and Benefits and each of these area could be referring to in-network vs out-of-network from the Benefits or Provider perspective. 
 
+## Text Classification Process Flow:
+
+![](/images/ProcessFlow.JPG.JPG)
+
 ## Preprocessing of Documents:
 1.	Extracting text from SharePoint pages - Office365-REST-Python-Client package to HTML code. You might need to have a Sharepoint Content Administrator (SCA) role to be able to authenticate.
 2.	Identify the right python libraries for extracting data from pdf (PyPDF2), doc, docx files.
@@ -53,3 +57,6 @@ Alianna J. Maren. (Feb 2020). NLP: Tf-Idf vs Doc2Vec - Contrast and Compare.Retr
 Fan, Shuzhan. (2018). Understanding Word2Vec and Doc2Vec. Retrieved from https://shuzhanfan.github.io/2018/08/understanding-word2vec-and-doc2vec/
 
 D. Greene and P. Cunningham. "Practical Solutions to the Problem of Diagonal Dominance in Kernel Document Clustering", Proc. ICML 2006.
+
+tf–idf. (n.d.). In Wikipedia. Retrieved from https://en.wikipedia.org/wiki/Tf%E2%80%93idf
+
