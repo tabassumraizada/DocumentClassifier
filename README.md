@@ -9,10 +9,9 @@ The goal of this project is to come up with the best classification algorithms t
 
 ## Datasets
 
-1. One of the datasets used for running the algorithms is available from:
-https://www.kaggle.com/c/learn-ai-bbc/data
+1. One of the datasets used for running the algorithms is available from https://www.kaggle.com/c/learn-ai-bbc/data. The one is used for building the model is available from http://mlg.ucd.ie/datasets/bbc.html. It consists of 2225 documents from the BBC news website corresponding to stories in five topical areas from 2004-2005. These news articles fall under 5 labels : business, entertainment, politics, sport and tech.
 
-1. The second dataset was build using internal company documents which were classified into six categories - Membership, Claims, Product and Benefits, Pharmacy, Healthcare utilization and Provider and Network. This corpus used word, powerpoint, excel and pdf documents. Refer to ![file ](/Analysis/KPDocumentCorpus_Creation and Pre-Processing.ipynb) for the Pre-processing steps involved in building this dataset. No content has been retained for confidentiality reasons. These documents are domain specific and do involve some overlap between the few categories like Provider and Network with Product and Benefits and each of these area could be referring to in-network vs out-of-network from the Benefits or Provider perspective. 
+1. The second dataset was build using internal company documents which were classified into six categories - Membership, Claims, Product and Benefits, Pharmacy, Healthcare utilization and Provider and Network. This corpus used word, powerpoint, excel and pdf documents. Refer to [file ](/Analysis/KPDocumentCorpus_Creation and Pre-Processing.ipynb) for the Pre-processing steps involved in building this dataset. No content has been retained for confidentiality reasons. These documents are domain specific and do involve some overlap between the few categories like Provider and Network with Product and Benefits and each of these area could be referring to in-network vs out-of-network from the Benefits or Provider perspective. 
 
 ## Preprocessing of Documents:
 1.	Extracting text from SharePoint pages - Office365-REST-Python-Client package to HTML code. You might need to have a Sharepoint Content Administrator (SCA) role to be able to authenticate.
