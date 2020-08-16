@@ -7,6 +7,11 @@ Data Literacy is a important goal for large organizations to help their users na
 
 The goal of this project is to pick the best classification algorithms that gives good accuracy for classifying a new document that is added to the corpus.
 
+## Project Goals:
+
+1. The primary goal of the project is to use supervised text classification techniques to accuractely predict domain/category for a new document that shall be added to the corpus.
+1. A secondary goal is also to explore text summrization techniques that can be used for documents
+
 ## Datasets
 
 1. One of the datasets used for running the algorithms is available from https://www.kaggle.com/c/learn-ai-bbc/data. The one is used for building the model is available from http://mlg.ucd.ie/datasets/bbc.html. It consists of 2225 documents from the BBC news website corresponding to stories in five topical areas from 2004-2005. These news articles fall under 5 labels : business, entertainment, politics, sport and tech.
@@ -18,24 +23,58 @@ The goal of this project is to pick the best classification algorithms that give
 ![](/images/ProcessFlow.JPG)
 
 ## Preprocessing of Documents:
-1.	Extracting text from SharePoint pages - Office365-REST-Python-Client package to HTML code. You might need to have a Sharepoint Content Administrator (SCA) role to be able to authenticate.
-2.	Identify the right python libraries for extracting data from pdf (PyPDF2), doc, docx files.
-3.	Ensure that the documents available for the different classes are balanced and if not come up with sampling techniques to circumvent the issue. 
-4.	Removing tags, accented characters, Stemming and lemmatization, Stop words
-5.	Ensure that the documents are correctly labeled
+1.	Extracting text from source documents
+  1. SharePoint pages - Office365-REST-Python-Client package, BeautifulSoup and Spacy for document processing. Note that given that internal company Sharepoint site is faily secured basic authentication techniques did not work. It required oauth authentication which needs Sharepoint Content Administrator (SCA) role on the site.
+  1. Python-pptx : for extracting text from PowerPoint Presentation PowerPoint
+  1. Docx2txt: Extracting text from Word Documents
+  1. PyPDF2 : Extracting text from PDF
+  1. xlrd : Extracting text from Excel worksheets
+1. Removing tags, accented characters, Stop word removal, handle contractions (words like won't, havn't), apply Stemming or lemmatization, identify other patterns that might apply to the document corpus that need to be removed and use it in a custom pre-processing function. These steps are also referred to as text normalization. 
+1. Ensure that the documents do not have null data and are correctly labeled
 
-## Project Goals:
 
-1) The primary goal of the project is to use supervised text classification techniques to accuractely predict domain/category for a new document that shall be added to the corpus.
-2) A secondary goal is also to explore text summrization techniques that can be used for documents
-
-## Feature Extraction:
+## Extracting Features/Terms/Entities from input text/documents:
 
 Identify the right features extraction technique that will result in classification model for obtaining better accuracy. As an example, we will use:
 1.	Term frequency-Inverse document frequency
 2.	Feature extraction using word embedding (doc2vec)
+Once the input text or documents have been pre-processed we want to extract numerical features from them which shall be used by the machine learning models. Several techniques like tf-idf, word2vec, doc2vec have been used in this project. Here is a brief overview of the various methodoloies:
 
-Potential Classification Methods (at least 3-4 methods from the list below) to be used on pre-processed data:
+**Bag of words (BoW)**
+
+This is the most basic technique used to convert text to numbers. It does not take into account the order in which the words appear in a document and only calculates the frequency of word in a document.
+
+**Count Vectorizers**
+
+Count vectorizers like the one available from sklearn library convert raw text into a numerical vector representation of individual words and n-grams. These numerical features (signals) can then be used in machine learning tasks for e.g. text classification. Refer to the [notebook ](/SampleCode-NLPConcepts/sklearn_Vectorization_samplecode.ipynb)for more details on this vectorizer. A variation of count vectorizer is HashingVectorizer where in the case of large document sets we can hash words to integers and then tokenize and encode documents into vectors. Here we cannot covert the encoded words back to the original word. The benefit of this approach is we can saved on memory in the case of large dataset in saving the vocabulary (dictionary of tokens) and is also faster to reload a HashingVectorizer object (Ganesan, n.d. )
+
+**Tf-idf (term frequency–inverse document frequency) features**
+
+Term frequency is to used for the raw count of a term in a document, i.e., the number of times that term t occurs in document d. There are several variations to this approach like using Boolean frequencies, term frequency adjusted for document length, logarithmically scaled frequency. 
+
+Inverse document frequency is the logarithmically scaled inverse fraction of the documents that contain the word which is obtained by dividing the total number of documents (D) by the number of documents (d) containing the term (t), and then taking the logarithm of that quotient (td-idf, n.d)
+ 
+idf (t,D)=log N/(|{dϵD ∶ tϵd}| )
+This calculation penalizes a word that appears a lot across documents. Refer to the notebook for more details on extracting this feature from a document corpus.
+
+**n-grams**
+bi-grams and tri-grams can capture contextual information compared to just unigrams. For e.g. New Mexico can carry a different meaning than “New” “Mexico” considered as separate words.
+
+**Word Embeddings**
+
+Word embeddings are a type of word representation which stores the contextual information in a low-dimensional vector.
+Word2vec introduced in 2013. It uses a simple neural network with a single hidden layer to learn the weights. Here instead of making predictions we are interested in weights of the hidden layer since they are the word embedding or vectors we want to learn. It uses 2 popular algorithms:
+
+1. Skip-gram model: In this model given a input word in a sentence we want the vector to predict how likely it is for each word in the vocabulary to be nearby. We can control how many surrounding words we are looking for by controlling the window size. 
+Input > One-hot vector of dimension 1X V, where V is the vocab size
+Hidden Layer > Dimension of the weight matrix for hidden layer is VX N where N is the size of the hidden layer
+Output > Vector with dimension of one-hot vector containing for every word in the vocabulary the probability that a randomly selected nearby word is that vocabulary word
+1. Continuous bag of words model (CBOW)
+Here given the context of words, surrounding a word in a sentence the network predicts howlikely it is for each wor in the vocabulary to be that word. 
+Since this model can be hard to train because of the large matrix size some improvement like Word pairs/Phrases (to reduce vocab size), Subsampling frequent word (little impact on creation of good word embedding) and negative sampling (training a small portion of the weights at one time using “negative” and also “positive” word at one time). 
+Doc2Vec is an extension of wordvec: Here we add another vector (paragraph ID or Document ID) to the input. We in the process will be training another vector which is document specific. 
+
+## Classification Methods used on pre-processed vectorized input 
 1.	Naive Bayes Classifier
 2.	Linear Classifier
 3.	Support Vector Machine
@@ -60,3 +99,4 @@ D. Greene and P. Cunningham. "Practical Solutions to the Problem of Diagonal Dom
 
 tf–idf. (n.d.). In Wikipedia. Retrieved from https://en.wikipedia.org/wiki/Tf%E2%80%93idf
 
+Ganesan, Kavita.(n.d.). HashingVectorizer vs. CountVectorizer. Retrieved from https://kavita-ganesan.com/hashingvectorizer-vs-countvectorizer/#.XzmFq-hKiUk
