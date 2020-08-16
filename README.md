@@ -15,7 +15,7 @@ The goal of this project is to pick the best classification algorithms that give
 
 ## Text Classification Process Flow:
 
-![](/images/ProcessFlow.JPG.JPG)
+![](/images/ProcessFlow.JPG)
 
 ## Preprocessing of Documents:
 1.	Extracting text from SharePoint pages - Office365-REST-Python-Client package to HTML code. You might need to have a Sharepoint Content Administrator (SCA) role to be able to authenticate.
