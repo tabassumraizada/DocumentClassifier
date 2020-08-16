@@ -42,4 +42,14 @@ Potential Classification Methods (at least 3-4 methods from the list below) to b
 
 ## References
 
+Sarkar, Diplankar.(2016).Text Analytics with Python, A Practical Real-World Approach to Gaining Actionable Insights you’re your data
+
+Li, Susan. Dec 8th 2019. Multi Class Text Classification with LSTM using TensorFlow 2.0. Retrieved from https://towardsdatascience.com/multi-class-text-classification-with-lstm-using-tensorflow-2-0-d88627c10a35
+
+Goyal, P., Pandey, S., Jain, K. (2018). Deep learning for natural language processing
+
+Alianna J. Maren. (Feb 2020). NLP: Tf-Idf vs Doc2Vec - Contrast and Compare.Retrieved Aug 9th from https://www.youtube.com/watch?v=iSkbq6Tjkj0
+
+Fan, Shuzhan. (2018). Understanding Word2Vec and Doc2Vec. Retrieved from https://shuzhanfan.github.io/2018/08/understanding-word2vec-and-doc2vec/
+
 D. Greene and P. Cunningham. "Practical Solutions to the Problem of Diagonal Dominance in Kernel Document Clustering", Proc. ICML 2006.
