@@ -5,7 +5,7 @@
 
 Data Literacy is a important goal for large organizations to help their users navigate through the complex data landscape. It helps to empower data consumers in producing high-value analysis and reporting for effective decision-making. As these documents are made available securely online, preferably at a centralized location, curating this wide inventory of content becomes equally important. This content could be stored in SharePoint sites, Teams channels, KP learn resources as work document etc. Part of curation is to identify the correct metadata tags like subject, domain, region, keywords, owner, data steward, date of publishing to be attached to each resource. This is where machine learning techniques can come in handy to auto classify documents. Identifying the right metadata tags helps in fast and efficient data retrieval.
 
-The goal of this project is to come up with the best classification algorithms that gives good accuracy for classifying a new document.
+The goal of this project is to pick the best classification algorithms that gives good accuracy for classifying a new document that is added to the corpus.
 
 ## Datasets
 
@@ -20,7 +20,13 @@ The goal of this project is to come up with the best classification algorithms t
 4.	Removing tags, accented characters, Stemming and lemmatization, Stop words
 5.	Ensure that the documents are correctly labeled
 
+## Project Goals:
+
+1) The primary goal of the project is to use supervised text classification techniques to accuractely predict domain/category for a new document that shall be added to the corpus.
+2) A secondary goal is also to explore text summrization techniques that can be used for documents
+
 ## Feature Extraction:
+
 Identify the right features extraction technique that will result in classification model for obtaining better accuracy. As an example, we will use:
 1.	Term frequency-Inverse document frequency
 2.	Feature extraction using word embedding (doc2vec)
