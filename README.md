@@ -86,10 +86,10 @@ Doc2Vec is an extension of wordvec: Here we add another vector (paragraph ID or 
 
 |Classifier|	 Best Test Accuracy reached	|Precision,Recall,F-Score by Category|
 | :------------ | ------:| -----:|
-| Random Forest | 0.62 [RF Metrics ](/images/kp_rf_cr.JPG) | <img src="/images/kp_rf_cr.JPG" width="400px" height ="400px"> |
-| Multinomial Naive Bayes | 0.69 [NB Metrics ](/images/kp_mnb_cr.JPG)| <img src="/images/kp_mnb_cr.JPG" width="400px" height ="400px"> |
-| Logistic Regression | 0.93 [LR Metrics ](/images/kp_lr_cr_small.JPG)| <img src="/images/kp_lr_small_cr.JPG" width="400px" height ="400px"> |
-|Sequential CNN | 0.72 (reached 0.79 in other runs) [LR Metrics ](/images/kp_cnn_cr.JPG)| <img src="/images/kp_cnn_cr.JPG" width="400px" height ="400px"> |
+| Random Forest | 0.62 | <img src="/images/kp_rf_cr.JPG" width="400px" height ="300px"> |
+| Multinomial Naive Bayes | 0.69 | <img src="/images/kp_mnb_cr.JPG" width="400px" height ="300px"> |
+| Logistic Regression | 0.93 | <img src="/images/kp_lr_cr_small.JPG" width="400px" height ="300px"> |
+|Sequential CNN | 0.72 (reached 0.79 in other runs) | <img src="/images/kp_cnn_cr.JPG" width="400px" height ="300px"> |
 
 ## References
 
