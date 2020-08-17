@@ -10,7 +10,7 @@ The goal of this project is to pick the best classification algorithms that give
 ## Project Goals:
 
 1. The primary goal of the project is to use supervised text classification techniques to accuractely predict domain/category for a new document that shall be added to the corpus.
-1. A secondary goal is also to explore text summrization techniques that can be used for documents
+1. A secondary goal is also to explore text summarization techniques that can be used for documents
 
 ## Datasets
 
@@ -75,7 +75,7 @@ Since this model can be hard to train because of the large matrix size some impr
 Doc2Vec is an extension of wordvec: Here we add another vector (paragraph ID or Document ID) to the input. We in the process will be training another vector which is document specific. 
 
 ## Classification Methods used on pre-processed vectorized input 
-1. Multinomail Naive Bayes Classifier
+1. Multinomial Naive Bayes Classifier
 1. Random Forest
 1. Logistic Regression 
 1. CNN Sequential Model 
