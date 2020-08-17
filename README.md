@@ -75,21 +75,35 @@ Since this model can be hard to train because of the large matrix size some impr
 Doc2Vec is an extension of wordvec: Here we add another vector (paragraph ID or Document ID) to the input. We in the process will be training another vector which is document specific. 
 
 ## Classification Methods used on pre-processed vectorized input 
-1.	Naive Bayes Classifier
-2.	Linear Classifier
-3.	Support Vector Machine
-4.	Bagging/Boosting Models
-5.	Latent Dirichlet Allocation which is a powerful machine learning technique used to sort documents by topic.
-6.	Explore the potential use of (deep) neural networks for text classification
+1. Multinomail Naive Bayes Classifier
+1. Random Forest
+1. Logistic Regression 
+1. CNN Sequential Model 
+1. RRN with LSTM
+## Summary of Text Classifiers Evaluation with KP Document Corpus (all using tf-idf vectorization)
 
-## Summary of Text Classifiers Evaluation with KP Document Corpus
-
-|Classifier|	 Best Test Accuracy reached	|Precision,Recall,F-Score by Category|
+|Classifiers|	 Best Test Accuracy reached	|Precision,Recall,F-Score by Category|
 | :------------ | ------:| -----:|
 | Random Forest | 0.62 | <img src="/images/kp_rf_cr.JPG" width="400px" height ="300px"> |
 | Multinomial Naive Bayes | 0.69 | <img src="/images/kp_mnb_cr.JPG" width="400px" height ="300px"> |
-| Logistic Regression | 0.93 | <img src="/images/kp_lr_cr_small.JPG" width="400px" height ="300px"> |
+| Logistic Regression | 0.86 (reached 0.93 with word2vec embedding | <img src="/images/kp_lr_cr_tfidf.JPG" width="400px" height ="300px"> |
 |Sequential CNN | 0.72 (reached 0.79 in other runs) | <img src="/images/kp_cnn_cr.JPG" width="400px" height ="300px"> |
+
+Comparison of model using different word enbeddings using Logistic Regression on KP Document Corpus
+
+|With tf-idf |	With Word2Vec	|With Doc2vec|
+| :------------ | ------:| -----:|
+| <img src="/images/kp_lr_cr_tfidf.JPG" width="400px" height ="300px"> | <img src="/images/kp_lr_cr_word2vec.JPG" width="400px" height ="300px"> | <img src="/images/kp_lr_cr_Doc2vec.JPG" width="400px" height ="300px"> |
+
+Here is a summary on the kind of datasets on which each of the approaches could work well:
+| - |	TF-IDF	| Word2vec|Doc2vec|
+| :------------ | ------:| -----:|-----:|
+|Corpus Size |Small/Medium  | Trains word vectors and find similarity between words for small to large datasets|Needs large to Large Unbounded dataset like Google's datasets|
+|Corpus Content|Limited|Varied to Domain Specific| Varied|
+|Knowledge Manager| *	Small team can model the entire ontology. *	Subject areas are well established * Irrelevant words can be eliminated| * Medium to Vast| * Ontology should be vast that is hard to model * Difficult to identify term relevance|
+*(Alianna,2020)*
+
+Given that the KP Corpus was a small dataset of 104 documents and domain focused document corpus we were able to do well with tf-idf vectorization. However the pre-trained word2vec raised the accuracy by 6 % given that it also take context into consideration. 
 
 ## References
 
