@@ -93,17 +93,27 @@ Comparison of model using different word enbeddings using Logistic Regression on
 
 |With tf-idf |	With Word2Vec	|With Doc2vec|
 | :------------ | ------:| -----:|
-| <img src="/images/kp_lr_cr_tfidf.JPG" width="400px" height ="300px"> | <img src="/images/kp_lr_cr_word2vec.JPG" width="400px" height ="300px"> | <img src="/images/kp_lr_cr_Doc2vec.JPG" width="400px" height ="300px"> |
+| <img src="/images/kp_lr_cr_tfidf.JPG" width="300px" height ="240px"> | <img src="/images/kp_lr_cr_word2vec.JPG" width="300px" height ="240px"> | <img src="/images/kp_lr_cr_Doc2vec.JPG" width="300px" height ="240px"> |
 
 Here is a summary on the kind of datasets on which each of the approaches could work well:
 | - |	TF-IDF	| Word2vec|Doc2vec|
 | :------------ | ------:| -----:|-----:|
 |Corpus Size |Small/Medium  | Trains word vectors and find similarity between words for small to large datasets|Needs large to Large Unbounded dataset like Google's datasets|
 |Corpus Content|Limited|Varied to Domain Specific| Varied|
-|Knowledge Manager| *	Small team can model the entire ontology. *	Subject areas are well established * Irrelevant words can be eliminated| * Medium to Vast| * Ontology should be vast that is hard to model * Difficult to identify term relevance|
+|Knowledge Manager| - Small team can model the entire ontology. - Subject areas are well established - Irrelevant words can be eliminated| - Medium to Vast| - Ontology should be vast that is hard to model - Difficult to identify term relevance|
+
 *(Alianna,2020)*
 
-Given that the KP Corpus was a small dataset of 104 documents and domain focused document corpus we were able to do well with tf-idf vectorization. However the pre-trained word2vec raised the accuracy by 6 % given that it also take context into consideration. 
+Given that the KP Corpus was a small domain focused document corpus of 104 documents  we were able to do well with tf-idf vectorization. The pre-trained word2vec vector from Google raised the accuracy by 6 % given that this approach also takes context into consideration. 
+
+## Conclusion and Recommendations:
+
+1. Even though deep learning neural networks are known to perform well there is no one size fits all model for every task. We found from this project that the simple Logistic Regression Model could reach an accuracy of 93 % for a supervised text classification task with a complex dataset of only 104 documents. This was achieved using the word2vec embeddings (bag of words). We can explore this further with other trained word vectors FastText and Glove with the skip gram architecture.
+1. We tried apply the extractive approaches using LSA, Luhn's summarizer to text summarization during this project. The results were found to be average. Hence we can try the abstractive text summarization techniques to demonstrate if they can give better results. 
+1. Once the access and security issues to Sharepoint documents can be resolved we can use topic modeling or text clustering to label the data instead of manual labeling of training document which can be time consuming. This will allow us to work with a larger dataset of documents
+1. Reference data available from domain specific sites can be used to resolve acronymns in the data. For e.g for Database documents the column names are shortened using standard rules which can be fed as a input dictionary using a custom pre-processor
+
+
 
 ## References
 
