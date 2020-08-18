@@ -1,5 +1,4 @@
-## Under Development Currently
-# DocumentClassifier
+# Document Classifion using Supervised Machine Learning Techniques
 
 ## Project Background and Description
 
